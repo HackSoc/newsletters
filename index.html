@@ -5,154 +5,230 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackSoc newsletter archive</title>
+
+    <script>
+        function switchto(ele) {
+            console.log(ele);
+            document.querySelector("#iframe-container iframe").src = ele.href;
+            return false;
+        }
+
+        function togglemenu() {
+            let nav = document.querySelector("nav");
+            nav.classList.toggle("hidden");
+            document.querySelector("#menutoggle").textContent = nav.classList.contains("hidden") ? "Show list" : "Hide list";
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        a {
+            color: black;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 20em auto;
+            grid-template-rows: 10em auto;
+            height: 97vh;
+            box-sizing: border-box;
+        }
+
+        main > * {
+            border: 1px solid black;
+            margin: 2px;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row: 1;
+        }
+
+        nav {
+            grid-column: 1;
+            grid-row: 2;
+            overflow: scroll;
+
+        }
+
+        nav.hidden {
+            display: none;
+        }
+
+        div#iframe-container {
+            grid-column: 2;
+            grid-row:2
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World</h1>
+
+    <main>
+        <header>
+            <h1>HackSoc newsletter archive</h1>
+            <button onclick="togglemenu()" id="menutoggle">Hide list</button>
+        </header>
+        <nav>
+            <ul>
+                
+                    <li><a href="/email/2021-03-05-agm-start.html" onclick="return switchto(this)">2021-03-05-agm-start</a></li>
+                
+                    <li><a href="/email/2021-03-01-week8.html" onclick="return switchto(this)">2021-03-01-week8</a></li>
+                
+                    <li><a href="/email/2021-02-26-agm.html" onclick="return switchto(this)">2021-02-26-agm</a></li>
+                
+                    <li><a href="/email/2021-02-22-week7.html" onclick="return switchto(this)">2021-02-22-week7</a></li>
+                
+                    <li><a href="/email/2021-02-15-week6.html" onclick="return switchto(this)">2021-02-15-week6</a></li>
+                
+                    <li><a href="/email/2021-02-08-week5.html" onclick="return switchto(this)">2021-02-08-week5</a></li>
+                
+                    <li><a href="/email/2021-02-01-week4.html" onclick="return switchto(this)">2021-02-01-week4</a></li>
+                
+                    <li><a href="/email/2021-01-25-week3.html" onclick="return switchto(this)">2021-01-25-week3</a></li>
+                
+                    <li><a href="/email/2021-01-18-week2.html" onclick="return switchto(this)">2021-01-18-week2</a></li>
+                
+                    <li><a href="/email/2021-01-11-week1.html" onclick="return switchto(this)">2021-01-11-week1</a></li>
+                
+                    <li><a href="/email/2021-01-04-week15.html" onclick="return switchto(this)">2021-01-04-week15</a></li>
+                
+                    <li><a href="/email/2020-12-28-week14.html" onclick="return switchto(this)">2020-12-28-week14</a></li>
+                
+                    <li><a href="/email/2020-12-21-week13.html" onclick="return switchto(this)">2020-12-21-week13</a></li>
+                
+                    <li><a href="/email/2020-12-14-week12.html" onclick="return switchto(this)">2020-12-14-week12</a></li>
+                
+                    <li><a href="/email/2020-12-10-week11p2.html" onclick="return switchto(this)">2020-12-10-week11p2</a></li>
+                
+                    <li><a href="/email/2020-12-07-week11.html" onclick="return switchto(this)">2020-12-07-week11</a></li>
+                
+                    <li><a href="/email/2020-11-30-week10.html" onclick="return switchto(this)">2020-11-30-week10</a></li>
+                
+                    <li><a href="/email/2020-11-23-week9.html" onclick="return switchto(this)">2020-11-23-week9</a></li>
+                
+                    <li><a href="/email/2020-11-16-week8.html" onclick="return switchto(this)">2020-11-16-week8</a></li>
+                
+                    <li><a href="/email/2020-11-09-week7.html" onclick="return switchto(this)">2020-11-09-week7</a></li>
+                
+                    <li><a href="/email/2020-11-02-week6.html" onclick="return switchto(this)">2020-11-02-week6</a></li>
+                
+                    <li><a href="/email/2020-10-26-week5.html" onclick="return switchto(this)">2020-10-26-week5</a></li>
+                
+                    <li><a href="/email/2020-10-19-week4.html" onclick="return switchto(this)">2020-10-19-week4</a></li>
+                
+                    <li><a href="/email/2020-10-12-week3.html" onclick="return switchto(this)">2020-10-12-week3</a></li>
+                
+                    <li><a href="/email/2020-10-05-week2.html" onclick="return switchto(this)">2020-10-05-week2</a></li>
+                
+                    <li><a href="/email/2020-09-28-week1.html" onclick="return switchto(this)">2020-09-28-week1</a></li>
+                
+                    <li><a href="/email/2020-09-22-resubscribe-and-memberships.html" onclick="return switchto(this)">2020-09-22-resubscribe-and-memberships</a></li>
+                
+                    <li><a href="/email/2020-09-08-call-for-submissions.html" onclick="return switchto(this)">2020-09-08-call-for-submissions</a></li>
+                
+                    <li><a href="/email/2020-08-31-week11.html" onclick="return switchto(this)">2020-08-31-week11</a></li>
+                
+                    <li><a href="/email/2020-08-24-week10.html" onclick="return switchto(this)">2020-08-24-week10</a></li>
+                
+                    <li><a href="/email/2020-08-17-week9.html" onclick="return switchto(this)">2020-08-17-week9</a></li>
+                
+                    <li><a href="/email/2020-08-10-week8.html" onclick="return switchto(this)">2020-08-10-week8</a></li>
+                
+                    <li><a href="/email/2020-08-03-week7.html" onclick="return switchto(this)">2020-08-03-week7</a></li>
+                
+                    <li><a href="/email/2020-07-27-week6.html" onclick="return switchto(this)">2020-07-27-week6</a></li>
+                
+                    <li><a href="/email/2020-07-20-week5.html" onclick="return switchto(this)">2020-07-20-week5</a></li>
+                
+                    <li><a href="/email/2020-07-13-week4.html" onclick="return switchto(this)">2020-07-13-week4</a></li>
+                
+                    <li><a href="/email/2020-07-06-week3.html" onclick="return switchto(this)">2020-07-06-week3</a></li>
+                
+                    <li><a href="/email/2020-06-29-week2.html" onclick="return switchto(this)">2020-06-29-week2</a></li>
+                
+                    <li><a href="/email/2020-06-22-week1.html" onclick="return switchto(this)">2020-06-22-week1</a></li>
+                
+                    <li><a href="/email/2020-06-15-week10.html" onclick="return switchto(this)">2020-06-15-week10</a></li>
+                
+                    <li><a href="/email/2020-06-08-week9.html" onclick="return switchto(this)">2020-06-08-week9</a></li>
+                
+                    <li><a href="/email/2020-06-01-week8.html" onclick="return switchto(this)">2020-06-01-week8</a></li>
+                
+                    <li><a href="/email/2020-05-25-week7.html" onclick="return switchto(this)">2020-05-25-week7</a></li>
+                
+                    <li><a href="/email/2020-05-18-week6.html" onclick="return switchto(this)">2020-05-18-week6</a></li>
+                
+                    <li><a href="/email/2020-05-11-week5.html" onclick="return switchto(this)">2020-05-11-week5</a></li>
+                
+                    <li><a href="/email/2020-05-04-week4.html" onclick="return switchto(this)">2020-05-04-week4</a></li>
+                
+                    <li><a href="/email/2020-04-27-week3.html" onclick="return switchto(this)">2020-04-27-week3</a></li>
+                
+                    <li><a href="/email/2020-04-20-week2.html" onclick="return switchto(this)">2020-04-20-week2</a></li>
+                
+                    <li><a href="/email/2020-04-13-week1.html" onclick="return switchto(this)">2020-04-13-week1</a></li>
+                
+                    <li><a href="/email/2020-04-10-Virtual-Events.html" onclick="return switchto(this)">2020-04-10-Virtual-Events</a></li>
+                
+                    <li><a href="/email/2020-03-09-week10.html" onclick="return switchto(this)">2020-03-09-week10</a></li>
+                
+                    <li><a href="/email/2020-03-02-week9.html" onclick="return switchto(this)">2020-03-02-week9</a></li>
+                
+                    <li><a href="/email/2020-02-24-week8.html" onclick="return switchto(this)">2020-02-24-week8</a></li>
+                
+                    <li><a href="/email/2020-02-21-AGM.html" onclick="return switchto(this)">2020-02-21-AGM</a></li>
+                
+                    <li><a href="/email/2020-02-10-week6.html" onclick="return switchto(this)">2020-02-10-week6</a></li>
+                
+                    <li><a href="/email/2020-02-03-week5.html" onclick="return switchto(this)">2020-02-03-week5</a></li>
+                
+                    <li><a href="/email/2020-01-28-week4.html" onclick="return switchto(this)">2020-01-28-week4</a></li>
+                
+                    <li><a href="/email/2020-01-20-week3.html" onclick="return switchto(this)">2020-01-20-week3</a></li>
+                
+                    <li><a href="/email/2020-01-13-week2.html" onclick="return switchto(this)">2020-01-13-week2</a></li>
+                
+                    <li><a href="/email/2020-01-06-week1.html" onclick="return switchto(this)">2020-01-06-week1</a></li>
+                
+                    <li><a href="/email/2019-12-02-week10.html" onclick="return switchto(this)">2019-12-02-week10</a></li>
+                
+                    <li><a href="/email/2019-11-25-week9.html" onclick="return switchto(this)">2019-11-25-week9</a></li>
+                
+                    <li><a href="/email/2019-11-18-week8.html" onclick="return switchto(this)">2019-11-18-week8</a></li>
+                
+                    <li><a href="/email/2019-11-11-week7.html" onclick="return switchto(this)">2019-11-11-week7</a></li>
+                
+                    <li><a href="/email/2019-11-04-week6.html" onclick="return switchto(this)">2019-11-04-week6</a></li>
+                
+                    <li><a href="/email/2019-10-28-week5.html" onclick="return switchto(this)">2019-10-28-week5</a></li>
+                
+                    <li><a href="/email/2019-10-21-week4.html" onclick="return switchto(this)">2019-10-21-week4</a></li>
+                
+                    <li><a href="/email/2019-10-16-Morgan-Stanley.html" onclick="return switchto(this)">2019-10-16-Morgan-Stanley</a></li>
+                
+                    <li><a href="/email/2019-10-14-week3.html" onclick="return switchto(this)">2019-10-14-week3</a></li>
+                
+                    <li><a href="/email/2019-10-07-week2.html" onclick="return switchto(this)">2019-10-07-week2</a></li>
+                
+                    <li><a href="/email/2019-10-05-BG%26C.html" onclick="return switchto(this)">2019-10-05-BG&C</a></li>
+                
+            </ul>
+        </nav>
+        <div id="iframe-container">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </main>
+
     
-    <ul>
-        
-            <li><a href="/email/2021-03-05-agm-start.html">2021-03-05-agm-start</a></li>
-        
-            <li><a href="/email/2021-03-01-week8.html">2021-03-01-week8</a></li>
-        
-            <li><a href="/email/2021-02-26-agm.html">2021-02-26-agm</a></li>
-        
-            <li><a href="/email/2021-02-22-week7.html">2021-02-22-week7</a></li>
-        
-            <li><a href="/email/2021-02-15-week6.html">2021-02-15-week6</a></li>
-        
-            <li><a href="/email/2021-02-08-week5.html">2021-02-08-week5</a></li>
-        
-            <li><a href="/email/2021-02-01-week4.html">2021-02-01-week4</a></li>
-        
-            <li><a href="/email/2021-01-25-week3.html">2021-01-25-week3</a></li>
-        
-            <li><a href="/email/2021-01-18-week2.html">2021-01-18-week2</a></li>
-        
-            <li><a href="/email/2021-01-11-week1.html">2021-01-11-week1</a></li>
-        
-            <li><a href="/email/2021-01-04-week15.html">2021-01-04-week15</a></li>
-        
-            <li><a href="/email/2020-12-28-week14.html">2020-12-28-week14</a></li>
-        
-            <li><a href="/email/2020-12-21-week13.html">2020-12-21-week13</a></li>
-        
-            <li><a href="/email/2020-12-14-week12.html">2020-12-14-week12</a></li>
-        
-            <li><a href="/email/2020-12-10-week11p2.html">2020-12-10-week11p2</a></li>
-        
-            <li><a href="/email/2020-12-07-week11.html">2020-12-07-week11</a></li>
-        
-            <li><a href="/email/2020-11-30-week10.html">2020-11-30-week10</a></li>
-        
-            <li><a href="/email/2020-11-23-week9.html">2020-11-23-week9</a></li>
-        
-            <li><a href="/email/2020-11-16-week8.html">2020-11-16-week8</a></li>
-        
-            <li><a href="/email/2020-11-09-week7.html">2020-11-09-week7</a></li>
-        
-            <li><a href="/email/2020-11-02-week6.html">2020-11-02-week6</a></li>
-        
-            <li><a href="/email/2020-10-26-week5.html">2020-10-26-week5</a></li>
-        
-            <li><a href="/email/2020-10-19-week4.html">2020-10-19-week4</a></li>
-        
-            <li><a href="/email/2020-10-12-week3.html">2020-10-12-week3</a></li>
-        
-            <li><a href="/email/2020-10-05-week2.html">2020-10-05-week2</a></li>
-        
-            <li><a href="/email/2020-09-28-week1.html">2020-09-28-week1</a></li>
-        
-            <li><a href="/email/2020-09-22-resubscribe-and-memberships.html">2020-09-22-resubscribe-and-memberships</a></li>
-        
-            <li><a href="/email/2020-09-08-call-for-submissions.html">2020-09-08-call-for-submissions</a></li>
-        
-            <li><a href="/email/2020-08-31-week11.html">2020-08-31-week11</a></li>
-        
-            <li><a href="/email/2020-08-24-week10.html">2020-08-24-week10</a></li>
-        
-            <li><a href="/email/2020-08-17-week9.html">2020-08-17-week9</a></li>
-        
-            <li><a href="/email/2020-08-10-week8.html">2020-08-10-week8</a></li>
-        
-            <li><a href="/email/2020-08-03-week7.html">2020-08-03-week7</a></li>
-        
-            <li><a href="/email/2020-07-27-week6.html">2020-07-27-week6</a></li>
-        
-            <li><a href="/email/2020-07-20-week5.html">2020-07-20-week5</a></li>
-        
-            <li><a href="/email/2020-07-13-week4.html">2020-07-13-week4</a></li>
-        
-            <li><a href="/email/2020-07-06-week3.html">2020-07-06-week3</a></li>
-        
-            <li><a href="/email/2020-06-29-week2.html">2020-06-29-week2</a></li>
-        
-            <li><a href="/email/2020-06-22-week1.html">2020-06-22-week1</a></li>
-        
-            <li><a href="/email/2020-06-15-week10.html">2020-06-15-week10</a></li>
-        
-            <li><a href="/email/2020-06-08-week9.html">2020-06-08-week9</a></li>
-        
-            <li><a href="/email/2020-06-01-week8.html">2020-06-01-week8</a></li>
-        
-            <li><a href="/email/2020-05-25-week7.html">2020-05-25-week7</a></li>
-        
-            <li><a href="/email/2020-05-18-week6.html">2020-05-18-week6</a></li>
-        
-            <li><a href="/email/2020-05-11-week5.html">2020-05-11-week5</a></li>
-        
-            <li><a href="/email/2020-05-04-week4.html">2020-05-04-week4</a></li>
-        
-            <li><a href="/email/2020-04-27-week3.html">2020-04-27-week3</a></li>
-        
-            <li><a href="/email/2020-04-20-week2.html">2020-04-20-week2</a></li>
-        
-            <li><a href="/email/2020-04-13-week1.html">2020-04-13-week1</a></li>
-        
-            <li><a href="/email/2020-04-10-Virtual-Events.html">2020-04-10-Virtual-Events</a></li>
-        
-            <li><a href="/email/2020-03-09-week10.html">2020-03-09-week10</a></li>
-        
-            <li><a href="/email/2020-03-02-week9.html">2020-03-02-week9</a></li>
-        
-            <li><a href="/email/2020-02-24-week8.html">2020-02-24-week8</a></li>
-        
-            <li><a href="/email/2020-02-21-AGM.html">2020-02-21-AGM</a></li>
-        
-            <li><a href="/email/2020-02-10-week6.html">2020-02-10-week6</a></li>
-        
-            <li><a href="/email/2020-02-03-week5.html">2020-02-03-week5</a></li>
-        
-            <li><a href="/email/2020-01-28-week4.html">2020-01-28-week4</a></li>
-        
-            <li><a href="/email/2020-01-20-week3.html">2020-01-20-week3</a></li>
-        
-            <li><a href="/email/2020-01-13-week2.html">2020-01-13-week2</a></li>
-        
-            <li><a href="/email/2020-01-06-week1.html">2020-01-06-week1</a></li>
-        
-            <li><a href="/email/2019-12-02-week10.html">2019-12-02-week10</a></li>
-        
-            <li><a href="/email/2019-11-25-week9.html">2019-11-25-week9</a></li>
-        
-            <li><a href="/email/2019-11-18-week8.html">2019-11-18-week8</a></li>
-        
-            <li><a href="/email/2019-11-11-week7.html">2019-11-11-week7</a></li>
-        
-            <li><a href="/email/2019-11-04-week6.html">2019-11-04-week6</a></li>
-        
-            <li><a href="/email/2019-10-28-week5.html">2019-10-28-week5</a></li>
-        
-            <li><a href="/email/2019-10-21-week4.html">2019-10-21-week4</a></li>
-        
-            <li><a href="/email/2019-10-16-Morgan-Stanley.html">2019-10-16-Morgan-Stanley</a></li>
-        
-            <li><a href="/email/2019-10-14-week3.html">2019-10-14-week3</a></li>
-        
-            <li><a href="/email/2019-10-07-week2.html">2019-10-07-week2</a></li>
-        
-            <li><a href="/email/2019-10-05-BG%26C.html">2019-10-05-BG&C</a></li>
-        
-    </ul>
 </body>
 </html>
