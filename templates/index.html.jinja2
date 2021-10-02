@@ -5,14 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackSoc newsletter archive</title>
+
+    <script>
+        function switchto(ele) {
+            console.log(ele);
+            document.querySelector("#iframe-container iframe").src = ele.href;
+            return false;
+        }
+
+        function togglemenu() {
+            let nav = document.querySelector("nav");
+            nav.classList.toggle("hidden");
+            document.querySelector("#menutoggle").textContent = nav.classList.contains("hidden") ? "Show list" : "Hide list";
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        a {
+            color: black;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 20em auto;
+            grid-template-rows: 10em auto;
+            height: 97vh;
+            box-sizing: border-box;
+        }
+
+        main > * {
+            border: 1px solid black;
+            margin: 2px;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row: 1;
+        }
+
+        nav {
+            grid-column: 1;
+            grid-row: 2;
+            overflow: scroll;
+
+        }
+
+        nav.hidden {
+            display: none;
+        }
+
+        div#iframe-container {
+            grid-column: 2;
+            grid-row:2
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World</h1>
+
+    <main>
+        <header>
+            <h1>HackSoc newsletter archive</h1>
+            <button onclick="togglemenu()" id="menutoggle">Hide list</button>
+        </header>
+        <nav>
+            <ul>
+                {% for item in emails %}
+                    <li><a href="{{url_for('.email', fn=item[1])}}" onclick="return switchto(this)">{{item[1]}}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div id="iframe-container">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </main>
+
     
-    <ul>
-        {% for item in emails %}
-            <li><a href="{{url_for('.email', fn=item[1])}}">{{item[1]}}</a></li>
-        {% endfor %}
-    </ul>
 </body>
 </html>
