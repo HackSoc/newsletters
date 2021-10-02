@@ -16,7 +16,7 @@ jobs:
           python-version: "3.9"
       - run: python -m venv venv/
       - run: python -m pip install -r pip-requirements.txt
-      - run: git worktree add build pages
+      - run: git worktree add build ghpages
       - run: source venv/bin/activate
       - run: flask build
       - run: |
