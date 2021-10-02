@@ -19,6 +19,7 @@ jobs:
       - run: git worktree add build ghpages
       - run: source venv/bin/activate
       - run: flask build
+      - run: ls -r build/
       - run: |
           cd build/
           git config user.name github-actions
