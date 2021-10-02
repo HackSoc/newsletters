@@ -11,7 +11,7 @@
     
     <ul>
         {% for item in emails %}
-            <li><a href="/email/{{item[1]}}">{{item[1]}}</a></li>
+            <li><a href="{{url_for('.email', fn=item[1])}}">{{item[1]}}</a></li>
         {% endfor %}
     </ul>
 </body>
