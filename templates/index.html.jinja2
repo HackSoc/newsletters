@@ -8,7 +8,11 @@
 
     <script>
         function switchto(ele) {
-            console.log(ele);
+            let prev = document.querySelector(".active");
+            if (prev !== null) {
+                prev.classList.remove("active");
+            }
+            ele.classList.add("active");
             document.querySelector("#iframe-container iframe").src = ele.href;
             return false;
         }
@@ -23,10 +27,11 @@
     <style>
         body {
             font-family: sans-serif;
+            color: #333;
         }
 
         a {
-            color: black;
+            color: #333;
         }
 
         main {
@@ -51,8 +56,28 @@
         nav {
             grid-column: 1;
             grid-row: 2;
-            overflow: scroll;
+            overflow-y: scroll;
+        }
 
+        nav a {
+            display: inline-block;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid lightgray;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1em;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #eee;
+            text-decoration: underline;
+        }
+
+        nav a.active {
+            background: #c2b4d1;
+            font-weight: bold;
         }
 
         nav.hidden {
@@ -78,11 +103,13 @@
             <button onclick="togglemenu()" id="menutoggle">Hide list</button>
         </header>
         <nav>
-            <ul>
+            <!-- <ul> -->
                 {% for item in emails %}
-                    <li><a href="{{url_for('.email', fn=item[1])}}" onclick="return switchto(this)">{{item[1]}}</a></li>
+                    <!-- <li> -->
+                        <a href="{{url_for('.email', fn=item[1])}}" onclick="return switchto(this)">{{item[1]}}</a>
+                    <!-- </li> -->
                 {% endfor %}
-            </ul>
+            <!-- </ul> -->
         </nav>
         <div id="iframe-container">
             <iframe src="" frameborder="0"></iframe>
