@@ -80,6 +80,13 @@
             font-weight: bold;
         }
 
+        span.date {
+            color: #555;
+            font-size: 0.9em;
+        }
+        span.title {
+        }
+
         nav.hidden {
             display: none;
         }
@@ -106,7 +113,10 @@
             <!-- <ul> -->
                 {% for item in emails %}
                     <!-- <li> -->
-                        <a href="{{url_for('.email', fn=item[1])}}" onclick="return switchto(this)">{{item[1]}}</a>
+                        <a href="{{url_for('.email', fn=item.filename)}}" onclick="return switchto(this)">
+                            <span class="date">{{item.date|format_date}}</span><br>
+                            <span class="title">{{item.title}}</span>
+                        </a>
                     <!-- </li> -->
                 {% endfor %}
             <!-- </ul> -->
