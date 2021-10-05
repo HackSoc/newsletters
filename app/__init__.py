@@ -14,7 +14,7 @@ app = flask.Flask(__name__, template_folder=os.path.join(BASE_DIR, "templates"))
 app.config["FLASK_DEBUG"] = True
 app.config["FLASK_ENV"] = "development"
 app.config["FREEZER_DESTINATION"] = os.path.join(BASE_DIR, "build")
-app.config["FREEZER_DESTINATION_IGNORE"] = [".git*"]
+app.config["FREEZER_DESTINATION_IGNORE"] = [".git*", "CNAME"]
 
 
 def list_emails() -> Generator[Tuple[date, str], None, None]:
