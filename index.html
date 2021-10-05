@@ -137,7 +137,21 @@
             height: 100%;
         }
 
+        nav p {
+            font-size: .6em;
+            font-style: italic;
+            color: #333;
+        }
+
         @media screen and (max-width: 60em){
+            main {
+                grid-template-rows: 3em auto;
+            }
+
+            h1 {
+                font-size: 1em;
+            }
+
             div#iframe-container {
                 grid-column-start: 1;
                 grid-column-end: 3;
@@ -149,9 +163,16 @@
                 display: none;
             }
 
+            header {
+                position: relative;
+            }
+
             header #menutoggle {
                 display: initial;
                 float:right;
+                position: absolute;
+                right: 0px;
+                top: 1em;
             }
 
             nav:not(.hidden) + div#iframe-container {
@@ -526,6 +547,7 @@
                         </a>
                 
             </div>
+            <p>Click on an item to show it in the viewer, or open in a new tab to see it standalone.</p>
         </nav>
         <div id="iframe-container">
             <iframe src="" frameborder="0"></iframe>
