@@ -25,6 +25,8 @@
     </script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
         body {
             font-family: sans-serif;
             color: #333;
@@ -34,16 +36,21 @@
             color: #333;
         }
 
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Sanchez';
+            font-weight: normal;
+        }
+
         main {
             display: grid;
             grid-template-columns: 20em auto;
-            grid-template-rows: 10em auto;
-            height: 97vh;
+            grid-template-rows: 5em auto;
+            height: 97vh; /* something's fucky */
             box-sizing: border-box;
         }
 
         main > * {
-            border: 1px solid black;
+            /* border: 1px solid black; */
             margin: 2px;
         }
 
@@ -53,10 +60,42 @@
             grid-row: 1;
         }
 
+        header img {
+            height: 100%;
+            float: left;
+            margin-right: .5em;
+        }
+
+        header h1 {
+            clear: none;
+            width: fit-content;
+            float: left;
+        }
+
+        header #menutoggle {
+            display: none;
+        }
+
         nav {
             grid-column: 1;
             grid-row: 2;
+
+            z-index: 999;
+            background: white;
+
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        nav > * {
+            flex: 0 0 auto;
+        }
+        
+        nav .inner {
             overflow-y: scroll;
+            flex: 1 1 auto;
         }
 
         nav a {
@@ -87,18 +126,37 @@
         span.title {
         }
 
-        nav.hidden {
-            display: none;
-        }
-
         div#iframe-container {
             grid-column: 2;
-            grid-row:2
+            grid-row:2;
+            z-index: 100;
         }
 
         iframe {
             width: 100%;
             height: 100%;
+        }
+
+        @media screen and (max-width: 60em){
+            div#iframe-container {
+                grid-column-start: 1;
+                grid-column-end: 3;
+
+                transition: filter 0.5s ease-in-out;
+            }
+
+            nav.hidden {
+                display: none;
+            }
+
+            header #menutoggle {
+                display: initial;
+                float:right;
+            }
+
+            nav:not(.hidden) + div#iframe-container {
+                filter: brightness(0.8);
+            }
         }
     </style>
 </head>
@@ -106,20 +164,18 @@
 
     <main>
         <header>
-            <h1>HackSoc newsletter archive</h1>
+            <img src="https://www.hacksoc.org/static/images/logo2017.svg" alt=""> <h1>HackSoc newsletter archive</h1>
             <button onclick="togglemenu()" id="menutoggle">Hide list</button>
         </header>
         <nav>
-            <!-- <ul> -->
+            <div class="inner">
                 {% for item in emails %}
-                    <!-- <li> -->
                         <a href="{{url_for('.email', fn=item.filename)}}" onclick="return switchto(this)">
                             <span class="date">{{item.date|format_date}}</span><br>
                             <span class="title">{{item.title}}</span>
                         </a>
-                    <!-- </li> -->
                 {% endfor %}
-            <!-- </ul> -->
+            </div>
         </nav>
         <div id="iframe-container">
             <iframe src="" frameborder="0"></iframe>
